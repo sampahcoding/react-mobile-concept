@@ -1,10 +1,9 @@
 module.exports = {
-  container: {
+  containerTop: {
     flex: 1,
     backgroundColor: '#e8e8e8',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: 40,
     justifyContent: 'center',
   },
   list: {

@@ -7,7 +7,7 @@ import styles from '../styles/style-landing';
 export default class MainPage extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.containerTop}>
         <FlatList
           data={[{key: 1, image: "https://img-9gag-fun.9cache.com/photo/avOon1W_460swp_v3.webp", title: "Start it now"},
                 {key: 2, image: "https://img-9gag-fun.9cache.com/photo/agX5XXq_460s.jpg", title: "Stop that now"},

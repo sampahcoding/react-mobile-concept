@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Linking } from 'react-native';
 import { connect } from 'react-redux';
 
-import { listRepos } from '../reducers/listRepo';
+import { listRepos } from '../reducers/Repos';
+import styles from '../styles/style-landing';
 
 class RepoList extends Component {
   componentDidMount() {
-    this.props.listRepos('relferreira');
+    this.props.listRepos('sampahcoding');
   }
   renderItem = ({ item }) => (
-    <View style={styles.item}>
-      <Text>{item.name}</Text>
+    <View style={styles.item} key={item.id}>
+      <Text style={styles.heading} onPress={ ()=>{ Linking.openURL(item.html_url)}}>{item.name}</Text>
+      <Text style={styles.itemDesc}>{item.description ? item.description : '-' }</Text>
     </View>
   );
   render() {
@@ -25,19 +27,12 @@ class RepoList extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  item: {
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc'
-  }
-});
-
 const mapStateToProps = state => {
-  let storedRepositories = state.repos.map(repo => ({ key: repo.id, ...repo }));
+  let storedRepositories = [];
+  if (state.Repos.repos.length > 0) {
+    storedRepositories = state.Repos.repos.map(repo => ({ key: repo.id, ...repo }));
+  }
+
   return {
     repos: storedRepositories
   };

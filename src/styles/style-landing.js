@@ -1,21 +1,26 @@
 module.exports = {
-  containerTop: {
-    flex: 1,
-    backgroundColor: '#e8e8e8',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  list: {
-    marginBottom: 20,
-    backgroundColor: '#fff'
-  },
   heading: {
-    alignItems: 'flex-start',
+    alignItems: 'center',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 18,
     marginTop: 10,
     marginBottom: 10,
+    paddingLeft: 10
+  },
+  h1: {
+    fontSize: 22,
+    marginBottom: 10,
+    paddingLeft: 10
+  },
+  container: {
+    flex: 1
+  },
+  item: {
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#eff0f1'
+  },
+  itemDesc: {
     paddingLeft: 10
   }
 };

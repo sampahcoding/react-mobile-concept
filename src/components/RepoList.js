@@ -12,17 +12,23 @@ class RepoList extends Component {
   renderItem = ({ item }) => (
     <View style={styles.item} key={item.id}>
       <Text style={styles.heading} onPress={ ()=>{ Linking.openURL(item.html_url)}}>{item.name}</Text>
-      <Text style={styles.itemDesc}>{item.description ? item.description : '-' }</Text>
+      <Text>{item.description ? item.description : '-' }</Text>
     </View>
   );
   render() {
     const { repos } = this.props;
     return (
-      <FlatList
-        styles={styles.container}
-        data={repos}
-        renderItem={this.renderItem}
-      />
+      <View style={{marginTop: 20}}>
+        <View style={{ ...styles.container, backgroundColor: '#47aee6', marginLeft: -10, paddingLeft: 20 }}>
+          <Text style={{ ...styles.h1, color: "#fff", paddingTop: 10 }}>Repositories</Text>
+        </View>
+        <View style={styles.container}>
+          <FlatList
+            data={repos}
+            renderItem={this.renderItem}
+          />
+        </View>
+      </View>
     );
   }
 }

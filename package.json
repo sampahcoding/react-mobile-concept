@@ -23,8 +23,24 @@
     "expo": "^25.0.0",
     "react": "16.2.0",
     "react-native": "0.52.0",
+    "react-native-dimension": "^1.0.6",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
     "redux-axios-middleware": "^4.0.0"
-  }
+  },
+  "description": "This project was created with [Create React Native App](https://github.com/react-community/create-react-native-app).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sampahcoding/react-mobile-concept.git"
+  },
+  "keywords": [
+    "react",
+    "native"
+  ],
+  "author": "ana syarifah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sampahcoding/react-mobile-concept/issues"
+  },
+  "homepage": "https://github.com/sampahcoding/react-mobile-concept#readme"
 }

@@ -1,6 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
-import AutoHeightImage from 'react-native-auto-height-image';
+import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
 import { width } from 'react-native-dimension';
 import styles from '../styles/style-landing';
 
@@ -15,20 +14,25 @@ class MainPage extends React.Component {
   render() {
     const { user } = this.props;
     return (
-      <View>
-        <Text style={styles.h1}>{user.name}</Text>
-        <AutoHeightImage
-            style={styles.image}
-            width= {width(100)}
-            source={{uri: user.avatar_url }}
-        />
+      <View style={styles.container}>
+        <View style={styles.half}>
+          <Image
+              style={{height: 180}}
+              width= {width(40)}
+              source={{uri: user.avatar_url }}
+          />
+        </View>
+        <View style={styles.half}>
+          <Text style={styles.h1}>{user.name}</Text>
+          <Text>Software Developer</Text>
+        </View>
       </View>
     );
   }
 }
 
 const mapStateUserToProps = state => {
-  let storedUser = state.userRepos.user || { avatar_url: "https://img-9gag-fun.9cache.com/photo/agX5XXq_460s.jpg" };
+  let storedUser = state.userRepos.user || { avatar_url: "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" };
   return {
     user: storedUser
   };

@@ -1,26 +1,31 @@
 module.exports = {
   heading: {
-    alignItems: 'center',
+    alignItems: 'flex-start',
     fontWeight: 'bold',
     fontSize: 18,
     marginTop: 10,
     marginBottom: 10,
-    paddingLeft: 10
+    color: '#47aee6'
   },
   h1: {
     fontSize: 22,
     marginBottom: 10,
-    paddingLeft: 10
+    fontWeight: 'bold',
+    flexDirection: 'row',
+    color: '#47aee6'
   },
   container: {
-    flex: 1
+    flexDirection: 'row',
+    marginLeft: 10
   },
   item: {
-    padding: 16,
     borderBottomWidth: 1,
-    borderBottomColor: '#eff0f1'
+    borderBottomColor: '#74c2ec',
+    paddingBottom: 20,
+    marginRight: 10
   },
-  itemDesc: {
-    paddingLeft: 10
+  half: {
+    flex: 2,
+    flexDirection: 'column'
   }
 };

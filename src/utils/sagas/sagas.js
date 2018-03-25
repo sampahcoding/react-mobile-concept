@@ -1,4 +1,5 @@
-import { call, put , all, takeEvery } from 'redux-saga/effects';
+import { call, put , all, takeEvery} from 'redux-saga/effects';
+import { delay } from 'redux-saga';
 import axios from 'axios';
 import * as actionTypes from '../../actions/ActionTypes';
 import * as API from '../api';
@@ -9,6 +10,7 @@ export function* getUserAsync(action) {
   try {
     console.log("Attempting to get User data with axios..");
     const response = yield call(axios.get, `${API.ADDRESS}/users/${action.user}`);
+    //yield delay(5000);
     yield put({type:actionTypes.GET_USER_SUCCESS, response: response.data});
     //console.log(response);
   } catch(e) {

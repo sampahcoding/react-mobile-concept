@@ -13,6 +13,7 @@ class MainPage extends React.Component {
 
   render() {
     const { user } = this.props;
+    //const { loading } = this.props.loading;
     return (
       <View style={styles.container}>
         <View style={styles.half}>
@@ -34,7 +35,8 @@ class MainPage extends React.Component {
 const mapStateUserToProps = state => {
   let storedUser = state.userRepos.user || { avatar_url: "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" };
   return {
-    user: storedUser
+    user: storedUser,
+    loading: state.userRepos.loading || true
   };
 };
 

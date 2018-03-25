@@ -26,7 +26,8 @@
     "react-native-dimension": "^1.0.6",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
-    "redux-axios-middleware": "^4.0.0"
+    "redux-axios-middleware": "^4.0.0",
+    "redux-saga": "^0.16.0"
   },
   "description": "This project was created with [Create React Native App](https://github.com/react-community/create-react-native-app).",
   "repository": {

@@ -5,7 +5,7 @@ export default function Repos(state = { repos: [] }, action) {
     case actionTypes.GET_REPOS:
       return { ...state, loading: true };
     case actionTypes.GET_REPOS_SUCCESS:
-      return { ...state, loading: false, repos: action.payload.data };
+      return { ...state, loading: false, repos: action.response };
     case actionTypes.GET_REPOS_FAIL:
       return {
         ...state,
@@ -18,12 +18,5 @@ export default function Repos(state = { repos: [] }, action) {
 }
 
 export function listRepos(user) {
-  return {
-    type: actionTypes.GET_REPOS,
-    payload: {
-      request: {
-        url: `/users/${user}/repos`
-      }
-    }
-  };
+  return { type: actionTypes.GET_REPOS, user: user };
 }

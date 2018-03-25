@@ -5,6 +5,7 @@ Below you'll find information about performing common tasks. The most recent ver
 ## Table of Training
 * [flat list](https://facebook.github.io/react-native/docs/flatlist.html)
 * [redux, axios]()
+* [async API call with redux-saga](https://github.com/redux-saga/redux-saga)
 * [expo as emulator] (https://expo.io/)
   - npm Start
   - scan the barcode into phone

@@ -7,16 +7,16 @@ import axios from 'axios';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas/sagas';
 
-const client = axios.create({
-  baseURL: 'https://api.github.com',
-  responseType: 'json'
-});
+// NAVIGATION
+import { navMiddleware } from '../components/AppNavigator';
+import NavReducer from '../reducers/NavReducer';
 
 const sagaMiddleware = createSagaMiddleware();
-const middleware = [sagaMiddleware]
+const middleware = [sagaMiddleware, navMiddleware]
 
 export default createStore(
   combineReducers({
+    nav: NavReducer,
     Repos,
     userRepos
   }),

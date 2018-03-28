@@ -5,16 +5,15 @@ import { Provider, connect } from 'react-redux';
 import RepoList from './src/components/RepoList';
 import MainPage from './src/components/MainPage';
 
-import store from './src/utils/store.js'
+import store from './src/utils/store'
+// NAVIGATION
+import AppWithNavigationState from './src/components/AppNavigator';
 
 export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <View style={styles.mainContainer}>
-          <MainPage />
-          <RepoList />
-        </View>
+        <AppWithNavigationState />
       </Provider>
     );
   }

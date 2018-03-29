@@ -1,4 +1,9 @@
 module.exports = {
+  mainContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingTop: 40
+  },
   heading: {
     alignItems: 'flex-start',
     fontWeight: 'bold',

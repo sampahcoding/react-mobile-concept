@@ -18,11 +18,3 @@ export default class App extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  mainContainer: {
-    flex: 1,
-    backgroundColor: '#fff',
-    marginTop: 40
-  }
-});

@@ -1,5 +1,14 @@
 {
   "expo": {
-    "sdkVersion": "25.0.0"
+    "sdkVersion": "25.0.0",
+    "name": "prototyping",
+    "description": "My resume of work and react native prototyping",
+    "icon": "./assets/love.png",
+    "splash": {
+      "icon": "./assets/splash.png",
+      "backgroundColor": "#74c2ec",
+      "hideExponentText": true,
+      "resizeMode": "contain"
+    }
   }
 }

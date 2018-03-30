@@ -4,9 +4,11 @@ Below you'll find information about performing common tasks. The most recent ver
 
 ## Table of Training
 * [flat list](https://facebook.github.io/react-native/docs/flatlist.html)
-* [redux, axios]()
+* [redux](https://redux.js.org/basics/usage-with-react)
+* [AXIOS](https://github.com/axios/axios)
 * [async API call with redux-saga](https://github.com/redux-saga/redux-saga)
-* [react-navigation](https://reactnavigation.org/) and [tab-navigator] (https://reactnavigation.org/docs/tab-navigator.html)
+* [react-navigation](https://reactnavigation.org/)
+* [tab-navigator] (https://reactnavigation.org/docs/tab-navigator.html)
 * [expo as emulator] (https://expo.io/)
   - npm Start
   - scan the barcode into phone

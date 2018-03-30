@@ -3,19 +3,7 @@ import { BackHandler } from 'react-native';
 import { addNavigationHelpers, StackNavigator, NavigationActions } from 'react-navigation';
 import { createReduxBoundAddListener, createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers';
 import { connect } from 'react-redux';
-import MainPage from './MainPage';
-import OtherView from './OtherView';
-
-export const AppNavigator = StackNavigator({
-    MainPage: { screen: MainPage },
-    OtherView: { screen: OtherView }
-  }, {
-    initialRouteName: 'MainPage',
-    headerMode: 'none',
-    navigationOptions: {
-      headerVisible: false,
-    }
-});
+import { NavigatorWithTab } from './NavigatorConfig';
 
 export const navMiddleware = createReactNavigationReduxMiddleware(
   "root",
@@ -24,10 +12,12 @@ export const navMiddleware = createReactNavigationReduxMiddleware(
 
 const addListener = createReduxBoundAddListener("root");
 
-
-
 class AppNav extends React.PureComponent<Props> {
 
+  //****//
+  // HANDLING PRESSING
+  // BACK BUTTON ON ANDROID
+  //****//
   constructor (props: Props) {
     super(props)
     this.onBackPress = this.onBackPress.bind(this)
@@ -47,10 +37,15 @@ class AppNav extends React.PureComponent<Props> {
     return nav !== this.props.nav
   }
 
+  //****//
+  // HANDLING PRESSING
+  // BACK BUTTON ON ANDROID
+  //****//
+
   render() {
     const { dispatch, nav } = this.props
     return (
-      <AppNavigator
+      <NavigatorWithTab
         navigation={addNavigationHelpers({
             dispatch: dispatch,
             state: nav,
@@ -59,7 +54,6 @@ class AppNav extends React.PureComponent<Props> {
       />
     );
   }
-
 }
 
 const mapStateToProps = state => ({

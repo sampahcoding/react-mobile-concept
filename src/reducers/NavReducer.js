@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { NavigationActions } from 'react-navigation';
-import { AppNavigator } from '../components/AppNavigator';
+import { NavigatorWithTab } from 'mobile-insta/src/components/navigator/NavigatorConfig';
 
-const router = AppNavigator.router;
+const router = NavigatorWithTab.router;
 const mainNavAction = router.getActionForPathAndParams('MainPage');
 const initialNavState = router.getStateForAction(mainNavAction);
 

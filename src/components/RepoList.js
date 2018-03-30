@@ -3,7 +3,7 @@ import { View, Text, FlatList, StyleSheet, Linking } from 'react-native';
 import { connect } from 'react-redux';
 
 import { listRepos } from '../reducers/Repos';
-import styles from '../styles/style-landing';
+import styles from '../styles/StyleDefault';
 
 class RepoList extends Component {
   componentDidMount() {

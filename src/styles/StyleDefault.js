@@ -1,3 +1,5 @@
+import * as COLOR from './Color';
+
 module.exports = {
   mainContainer: {
     flex: 1,
@@ -25,7 +27,7 @@ module.exports = {
   },
   item: {
     borderBottomWidth: 1,
-    borderBottomColor: '#74c2ec',
+    borderBottomColor: COLOR.LIGHT_BLUE,
     paddingBottom: 20,
     marginRight: 10
   },

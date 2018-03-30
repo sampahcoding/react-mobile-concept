@@ -8,7 +8,7 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas/sagas';
 
 // NAVIGATION
-import { navMiddleware } from '../components/AppNavigator';
+import { navMiddleware } from 'mobile-insta/src/components/navigator/AppNavigator';
 import NavReducer from '../reducers/NavReducer';
 
 const sagaMiddleware = createSagaMiddleware();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image, Button } from 'react-native';
 import { width } from 'react-native-dimension';
-import styles from '../styles/style-landing';
+import styles from '../styles/StyleDefault';
 
 import { connect } from 'react-redux';
 import { getUser } from '../reducers/userRepos';
@@ -22,8 +22,8 @@ class MainPage extends React.Component {
         <View style={styles.container}>
           <View style={styles.half}>
             <Image
-              style={{height: 180}}
-              width= {width(40)}
+              style={{height: 150, width: 150, borderColor: "#74c2ec", borderWidth: 3}}
+              borderRadius={100}
               source={ this.props.loading == true ?  DEFAULT.LOADER : {uri: user.avatar_url} }
             />
           </View>
@@ -33,7 +33,7 @@ class MainPage extends React.Component {
             <Button
               title="Press"
               color="#74c2ec"
-              onPress={() => this.props.navigation.navigate('OtherView')}
+              onPress={() => this.props.navigation.navigate('RegistrationForm')}
             />
           </View>
         </View>

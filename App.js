@@ -7,7 +7,7 @@ import MainPage from './src/components/MainPage';
 
 import store from './src/utils/store'
 // NAVIGATION
-import AppWithNavigationState from './src/components/AppNavigator';
+import AppWithNavigationState from 'mobile-insta/src/components/navigator/AppNavigator';
 
 export default class App extends Component {
   render() {

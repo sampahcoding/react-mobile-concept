@@ -1,5 +1,6 @@
 import Repos from '../reducers/Repos';
-import userRepos from '../reducers/userRepos';
+import userRepos from '../reducers/UserRepos';
+import Photos from '../reducers/Photos';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import axios from 'axios';
 
@@ -18,7 +19,8 @@ export default createStore(
   combineReducers({
     nav: NavReducer,
     Repos,
-    userRepos
+    userRepos,
+    Photos
   }),
   applyMiddleware(...middleware)
 );

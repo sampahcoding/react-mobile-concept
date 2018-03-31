@@ -12,15 +12,15 @@ class RepoList extends Component {
   renderItem = ({ item }) => (
     <View style={styles.item} key={item.id}>
       <Text style={styles.heading} onPress={ ()=>{ Linking.openURL(item.html_url)}}>{item.name}</Text>
-      <Text>{item.description ? item.description : '-' }</Text>
+      <Text style={styles.default_text}>{item.description ? item.description : '-' }</Text>
     </View>
   );
   render() {
     const { repos } = this.props;
     return (
       <View style={{marginTop: 20}}>
-        <View style={{ ...styles.container, backgroundColor: '#47aee6', marginLeft: -10, paddingLeft: 20 }}>
-          <Text style={{ ...styles.h1, color: "#fff", paddingTop: 10 }}>Repositories</Text>
+        <View style={{ ...styles.container, ...styles.repo_heading }}>
+          <Text style={{ ...styles.h1, ...styles.item_h1 }}>Repositories</Text>
         </View>
         <View style={styles.container}>
           <FlatList

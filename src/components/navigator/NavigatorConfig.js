@@ -76,8 +76,9 @@ const routeConfiguration = {
     navigationOptions: {
       tabBarLabel: '',
       tabBarIcon: ({ focused }) => {
-        return focused ? <Icon name="home" size={25} color={COLOR.LIGHT_BLUE}/> : <Icon name="home" size={25} color={COLOR.BLUE}/>
-      }
+        return focused ? <Icon name="home" size={25} color={COLOR.WHITE}/> : <Icon name="home" size={25} color={COLOR.BLUE}/>
+      },
+      elevation: 0
     }
   },
   TabSearchNavigation: {
@@ -85,8 +86,9 @@ const routeConfiguration = {
     navigationOptions: {
       tabBarLabel: '',
       tabBarIcon: ({ focused }) => {
-        return focused ? <Icon name="heart" size={25} color={COLOR.LIGHT_BLUE}/> : <Icon name="heart" size={25} color={COLOR.BLUE}/>
-      }
+        return focused ? <Icon name="heart" size={25} color={COLOR.WHITE}/> : <Icon name="heart" size={25} color={COLOR.BLUE}/>
+      },
+      elevation: 0
     }
   }
 }
@@ -98,8 +100,8 @@ const tabBarConfiguration = {
   tabBarOptions: {
     activeTintColor: COLOR.DARK_BLUE,
     inactiveTintColor: COLOR.LIGHT_BLUE,
-    tabStyle: {borderTopWidth:1, borderColor:COLOR.LIGHT_BLUE, backgroundColor:COLOR.WHITE},
-    style: {backgroundColor:COLOR.WHITE},
+    tabStyle: {borderTopWidth:0.5, borderColor:COLOR.LIGHT_BLUE, backgroundColor:COLOR.BG_BLUE},
+    style: {backgroundColor: COLOR.BG_BLUE},
     labelStyle: {fontWeight:'bold', fontSize:12},
     showLabel: false
   }

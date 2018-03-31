@@ -4,7 +4,7 @@ const initialState = {
   "avatar_url": "mobile-insta/assets/loading.gif"
 };
 
-export default function userRepos(state = { user: initialState }, action) {
+export default function UserRepos(state = { user: initialState }, action) {
   switch (action.type) {
     case actionTypes.GET_USER:
       return { ...state, loading: true };

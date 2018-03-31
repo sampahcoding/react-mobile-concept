@@ -22,7 +22,8 @@ const NavigatorTabSearch = StackNavigator({
   SearchDetail: {
     screen: SearchDetail,
     navigationOptions: {
-      tabBarVisible:false
+      tabBarVisible:false,
+      header: null
     }
   },
   SearchResult: {

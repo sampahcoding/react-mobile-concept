@@ -8,8 +8,8 @@ import * as API from '../api';
 function* getListPhotos(action) {
   try {
     console.log("Attempting to get List Photos with axios..");
-    const response = yield call(axios.get, `${API.ADDRESS_TYPICODE}/photos?q=${action.q}&_limit=10`);
-    yield put({type:actionTypes.GET_PHOTOS_SUCCESS, response: response.data});
+    const response = yield call(axios.get, `${API.ADDRESS_TYPICODE}/photos?q=${action.params.q}&_limit=10&_page=${action.params.page}`);
+    yield put({type:actionTypes.GET_PHOTOS_SUCCESS, response: response.data, infinite: action.params.infinite});
   } catch(e) {
     console.log("Request failed! could not get list photos");
     console.log(e);

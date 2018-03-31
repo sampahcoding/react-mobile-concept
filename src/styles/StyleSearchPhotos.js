@@ -2,14 +2,16 @@ import * as COLOR from './Color';
 
 module.exports = {
   item: {
-    paddingTop: 30,
+    paddingBottom: 30,
     paddingLeft:15,
     paddingRight: 15,
-    alignItems: 'center'
+    //alignItems: 'center'
   },
   item_image: {
     borderColor: COLOR.LIGHTEST_BLUE,
-    borderWidth: 2,
+    borderWidth: 2
+  },
+  item_touch: {
     zIndex: 4
   },
   item_desc: {
@@ -46,6 +48,7 @@ module.exports = {
     alignItems: 'center',
     borderWidth: 1,
     borderRadius: 4,
+    fontSize: 16,
     marginLeft:'5%',
     marginRight:'5%',
     color: COLOR.DARK_TEXT,
@@ -53,7 +56,7 @@ module.exports = {
   },
   result_wrapper: {
     backgroundColor: COLOR.WHITE,
-    paddingBottom: 30
+    paddingTop: 30
   },
   not_found: {
     fontSize: 18,
@@ -83,5 +86,10 @@ module.exports = {
     fontSize:20,
     textAlign: 'center',
     marginTop: 30
+  },
+  cursor_up: {
+    position: 'absolute',
+    bottom: 60,
+    right: 15
   }
 }

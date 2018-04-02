@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import { TabNavigator, TabBarBottom, StackNavigator, NavigationActions } from 'react-navigation';
+import { TabNavigator, TabBarBottom, StackNavigator, NavigationActions, SwitchNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Foundation';
 import * as COLOR from '../../styles/Color';
+import { NavigatorTabSearch } from './NavigatorTabSearch';
+import { NavigatorTabHome } from './NavigatorTabHome';
+import { NavigatorTabSetting } from './NavigatorTabSetting';
+import { AuthNavigator } from './AuthNavigator';
+import SplashScreen from '../SplashScreen';
 
 const navigateOnce = (getStateForAction) => (action, state) => {
   const {type, routeName} = action;
@@ -12,72 +17,20 @@ const navigateOnce = (getStateForAction) => (action, state) => {
   ) ? state : getStateForAction(action, state);
 };
 
-// =================================================================================
-// TAB SEARCH
-// =================================================================================
-import SearchResult from '../search/SearchResult';
-import SearchDetail from '../search/SearchDetail';
-
-const NavigatorTabSearch = StackNavigator({
-  SearchDetail: {
-    screen: SearchDetail,
-    navigationOptions: {
-      tabBarVisible:false,
-      header: null
-    }
-  },
-  SearchResult: {
-     screen: SearchResult,
-     navigationOptions: {
-       header: null
-     }
-   },
-}, {
-  headerMode: 'screen',
-  mode: 'card',
-  initialRouteName: 'SearchResult'
-})
-
+//==================================//
+// ALL MAIN TAB CONFIG
+//=================================//
 NavigatorTabSearch.router.getStateForAction = navigateOnce(NavigatorTabSearch.router.getStateForAction);
-
-// =================================================================================
-// TAB REGISTRATION
-// =================================================================================
-import RegistrationForm from '../registration/Form';
-import MainPage from '../MainPage';
-
-const NavigatorRegistration = StackNavigator({
-  RegistrationForm: {
-    screen: RegistrationForm,
-    navigationOptions: {
-      tabBarVisible:false
-    }
-  },
-  MainPage: {
-     screen: MainPage,
-     navigationOptions: {
-       header: null
-     }
-   },
-}, {
-  headerMode: 'screen',
-  mode: 'card',
-  initialRouteName: 'MainPage'
-})
-
-NavigatorRegistration.router.getStateForAction = navigateOnce(NavigatorRegistration.router.getStateForAction);
-
-// =================================================================
-// TAB BAR
-// =================================================================
+NavigatorTabHome.router.getStateForAction = navigateOnce(NavigatorTabHome.router.getStateForAction);
+NavigatorTabSetting.router.getStateForAction = navigateOnce(NavigatorTabSetting.router.getStateForAction);
 
 const routeConfiguration = {
   TabRegistrationNavigation: {
-    screen: NavigatorRegistration,
+    screen: NavigatorTabHome,
     navigationOptions: {
-      tabBarLabel: '',
+      tabBarLabel: 'Home',
       tabBarIcon: ({ focused }) => {
-        return focused ? <Icon name="home" size={25} color={COLOR.WHITE}/> : <Icon name="home" size={25} color={COLOR.BLUE}/>
+        return focused ? <Icon name="home" size={30} color={COLOR.WHITE}/> : <Icon name="home" size={30} color={COLOR.BLUE}/>
       },
       elevation: 0
     }
@@ -85,9 +38,19 @@ const routeConfiguration = {
   TabSearchNavigation: {
     screen: NavigatorTabSearch,
     navigationOptions: {
-      tabBarLabel: '',
+      tabBarLabel: 'Photos',
       tabBarIcon: ({ focused }) => {
-        return focused ? <Icon name="heart" size={25} color={COLOR.WHITE}/> : <Icon name="heart" size={25} color={COLOR.BLUE}/>
+        return focused ? <Icon name="heart" size={30} color={COLOR.WHITE}/> : <Icon name="heart" size={30} color={COLOR.BLUE}/>
+      },
+      elevation: 0
+    }
+  },
+  TabSettingNavigation: {
+    screen: NavigatorTabSetting,
+    navigationOptions: {
+      tabBarLabel: 'Setting',
+      tabBarIcon: ({ focused }) => {
+        return focused ? <Icon name="torso" size={30} color={COLOR.WHITE}/> : <Icon name="torso" size={30} color={COLOR.BLUE}/>
       },
       elevation: 0
     }
@@ -99,13 +62,23 @@ const tabBarConfiguration = {
   tabBarComponent: TabBarBottom,
   tabBarPosition: 'bottom',
   tabBarOptions: {
-    activeTintColor: COLOR.DARK_BLUE,
+    activeTintColor: COLOR.WHITE,
     inactiveTintColor: COLOR.LIGHT_BLUE,
     tabStyle: {borderTopWidth:0.5, borderColor:COLOR.LIGHT_BLUE, backgroundColor:COLOR.BG_BLUE},
     style: {backgroundColor: COLOR.BG_BLUE},
-    labelStyle: {fontWeight:'bold', fontSize:12},
-    showLabel: false
+    labelStyle: {fontWeight:'bold', fontSize:10}
   }
 }
+const NavigatorWithTab = TabNavigator(routeConfiguration, tabBarConfiguration);
 
-export const NavigatorWithTab = TabNavigator(routeConfiguration, tabBarConfiguration);
+
+//==================================//
+// ALL ROUTES
+//=================================//
+export const SwitchNav =  SwitchNavigator({
+    SplashScreen: SplashScreen,
+    App: NavigatorWithTab,
+    Auth: AuthNavigator,
+  },{
+    initialRouteName: 'SplashScreen',
+  });

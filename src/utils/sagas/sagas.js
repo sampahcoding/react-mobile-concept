@@ -1,6 +1,7 @@
 import { all, fork } from 'redux-saga/effects';
 import * as GithubSagas from './GithubSagas';
 import * as SearchPhotosSagas from './SearchPhotosSagas';
+import * as AuthSagas from './AuthSagas';
 
 //======================================//
 // Root sagas //
@@ -8,5 +9,9 @@ import * as SearchPhotosSagas from './SearchPhotosSagas';
 // Becareful if exporting worker sagas //
 //======================================//
 export default function* rootSaga() {
-  yield all([...Object.values(GithubSagas), ...Object.values(SearchPhotosSagas)].map(fork))
+  yield all([
+    ...Object.values(GithubSagas),
+    ...Object.values(SearchPhotosSagas),
+    ...Object.values(AuthSagas)
+  ].map(fork))
 }

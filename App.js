@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Provider, connect } from 'react-redux';
-
-import RepoList from './src/components/RepoList';
-import MainPage from './src/components/MainPage';
-
+import { AsyncStorage } from 'react-native';
+import { Provider } from 'react-redux';
 import store from './src/utils/store'
-// NAVIGATION
 import AppWithNavigationState from 'mobile-insta/src/components/navigator/AppNavigator';
 
 export default class App extends Component {
+
   render() {
     return (
-      <Provider store={store}>
-        <AppWithNavigationState />
-      </Provider>
+        <Provider store={store}>
+          <AppWithNavigationState />
+        </Provider>
     );
   }
 }

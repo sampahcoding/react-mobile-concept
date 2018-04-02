@@ -1,11 +1,11 @@
 {
   "expo": {
     "sdkVersion": "25.0.0",
-    "name": "prototyping",
+    "name": "Sweet",
     "description": "My resume of work and react native prototyping",
-    "icon": "./assets/love.png",
+    "icon": "./assets/copy.png",
     "splash": {
-      "icon": "./assets/splash.png",
+      "icon": "./assets/copy.png",
       "backgroundColor": "#74c2ec",
       "hideExponentText": true,
       "resizeMode": "contain"

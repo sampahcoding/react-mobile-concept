@@ -1,6 +1,4 @@
-import Repos from '../reducers/Repos';
-import userRepos from '../reducers/UserRepos';
-import Photos from '../reducers/Photos';
+
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import axios from 'axios';
 
@@ -10,18 +8,14 @@ import rootSaga from './sagas/sagas';
 
 // NAVIGATION
 import { navMiddleware } from 'mobile-insta/src/components/navigator/AppNavigator';
-import NavReducer from '../reducers/NavReducer';
+import { rootReducer } from '../reducers/RootReducer';
 
 const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware, navMiddleware]
 
+
 export default createStore(
-  combineReducers({
-    nav: NavReducer,
-    Repos,
-    userRepos,
-    Photos
-  }),
+  rootReducer,
   applyMiddleware(...middleware)
 );
 

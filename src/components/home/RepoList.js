@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, FlatList, StyleSheet, Linking } from 'react-native';
 import { connect } from 'react-redux';
 
-import { listRepos } from '../reducers/Repos';
-import styles from '../styles/StyleDefault';
+import { listRepos } from 'mobile-insta/src/reducers/ReposReducer';
+import styles from 'mobile-insta/src/styles/StyleDefault';
 
 class RepoList extends Component {
   componentDidMount() {

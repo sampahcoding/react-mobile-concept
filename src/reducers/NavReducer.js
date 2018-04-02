@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import { NavigationActions } from 'react-navigation';
-import { NavigatorWithTab } from 'mobile-insta/src/components/navigator/NavigatorConfig';
+import { SwitchNav } from 'mobile-insta/src/components/navigator/NavigatorConfig';
 
-const router = NavigatorWithTab.router;
-const mainNavAction = router.getActionForPathAndParams('MainPage');
+const router = SwitchNav.router;
+const mainNavAction = router.getActionForPathAndParams('SplashScreen');
 const initialNavState = router.getStateForAction(mainNavAction);
 
 const NavReducer = (state = initialNavState, action) => {

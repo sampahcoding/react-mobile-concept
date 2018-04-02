@@ -8,3 +8,7 @@ export const GET_USER_FAIL = 'LOAD_USER_FAIL';
 export const GET_PHOTOS = 'LOAD_PHOTOS';
 export const GET_PHOTOS_SUCCESS = 'LOAD_PHOTOS_SUCCESS';
 export const GET_PHOTOS_FAIL = 'LOAD_PHOTOS_FAIL';
+
+export const POST_AUTH = 'POST_AUTH';
+export const POST_AUTH_SUCCESS = 'POST_AUTH_SUCCESS';
+export const POST_AUTH_FAIL = 'POST_AUTH_FAIL';

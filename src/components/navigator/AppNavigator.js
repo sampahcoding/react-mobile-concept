@@ -3,7 +3,7 @@ import { BackHandler } from 'react-native';
 import { addNavigationHelpers, StackNavigator, NavigationActions } from 'react-navigation';
 import { createReduxBoundAddListener, createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers';
 import { connect } from 'react-redux';
-import { NavigatorWithTab } from './NavigatorConfig';
+import { SwitchNav } from './NavigatorConfig';
 
 export const navMiddleware = createReactNavigationReduxMiddleware(
   "root",
@@ -45,7 +45,7 @@ class AppNav extends React.PureComponent<Props> {
   render() {
     const { dispatch, nav } = this.props
     return (
-      <NavigatorWithTab
+      <SwitchNav
         navigation={addNavigationHelpers({
             dispatch: dispatch,
             state: nav,

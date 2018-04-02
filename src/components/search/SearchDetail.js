@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
+import { Text, View} from 'react-native';
 
 export default class SearchDetail extends React.Component {
 

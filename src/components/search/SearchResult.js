@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableHighlight, TextInput, Dimensions, Image } from 'react-native';
 import AutoHeightImage from 'react-native-auto-height-image';
 import { connect } from 'react-redux';
-import { listPhotos } from '../../reducers/Photos';
+import { listPhotos } from '../../reducers/PhotosReducer';
 import styles from '../../styles/StyleSearchPhotos';
 import * as COLOR from '../../styles/Color';
 import Icon from 'react-native-vector-icons/Foundation';
@@ -55,8 +55,7 @@ class SearchResult extends PureComponent {
           underlayColor={COLOR.WHITE}
           activeOpacity={2}
           style={styles.item_touch}
-          onPress={() => this.props.navigation.navigate('SearchDetail')}
-        >
+          onPress={() => this.props.navigation.navigate('SearchDetail')}>
           <AutoHeightImage
             style={styles.item_image}
             borderRadius={1}
@@ -116,7 +115,7 @@ class SearchResult extends PureComponent {
         <View style={{...styles.result_wrapper, height: result_height}}>
           {result}
         </View>
-        <TouchableHighlight onPress={this.scrollToIndex} style={styles.cursor_up}>
+        <TouchableHighlight onPress={this.scrollToIndex} underlayColor={COLOR.WHITE} style={styles.cursor_up}>
           <Icon name="arrow-up"  size={30} color={COLOR.BLUE} />
         </TouchableHighlight>
       </View>

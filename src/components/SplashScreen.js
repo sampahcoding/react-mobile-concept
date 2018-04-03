@@ -3,8 +3,8 @@ import { Text, View, AsyncStorage } from 'react-native';
 import AutoHeightImage from 'react-native-auto-height-image';
 
 export default class SplashScreen extends React.Component {
-  constructor() {
-    super();
+
+  componentDidMount() {
     setTimeout(() => {
       this._loadAsync();
     }, 5000)
